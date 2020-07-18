@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Tasks</h1>
+    <ul>
+        {% if not todos %}
+            <p>You have no tasks!</p>
+        {% endif %}
+        {% for todo in todos %}
+        <div class='indivtask'>
+            <form action="/remove" method="post">
+                <li name='task'> {{ todo }} </li>
+                <button name="remove">Remove</button>
+            </form>
+        </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block sidenav %}
+    <a href='/add'>Add a new task</a>
+{% endblock %}

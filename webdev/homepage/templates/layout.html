@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Shaughn's Homepage
+        </title>
+        <link rel='stylesheet' href= "{{ url_for('static',filename='styles/styles.css') }}">
+    </head>
+    <body>
+        <div class='sidenav'>
+            <h2 class='sidenav-head'>Navigation<h2>
+            {% block sidenav %}
+            {% endblock %}
+        </div>
+        <div class='main'>
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
